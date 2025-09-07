@@ -9,7 +9,7 @@ def _gemini_llm():
     return LLM(
         model="gemini/gemini-1.5-flash",
         api_key = os.getenv("GEMINI API KEY"),
-        temperature=0.2
+        temperature=0
     )
 
 # Input Crew Processes

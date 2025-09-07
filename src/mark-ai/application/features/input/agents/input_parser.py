@@ -9,7 +9,7 @@ def build_input_parser(llm=None) -> Agent:
     """
     return Agent (
         role="Human Input Analyst",
-        goal="Analyze user input: {prompt} and produce a structured, concise, ready-to-proceed list",
+        goal="Analyze, standarize and validate user input: {prompt} and produce a structured response",
         backstory=(
             "You are meticulous, observative and avoid speculation or hallucination"
             "Focus only on the information provided. If specific critical points are not provided, do not try to infere them."
@@ -17,5 +17,5 @@ def build_input_parser(llm=None) -> Agent:
         ),
         llm=llm,
         verbose=True,
-        allow_delegation=False
+        allow_delegation=False,
     )
