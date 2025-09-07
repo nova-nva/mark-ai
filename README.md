@@ -6,8 +6,8 @@
 ## Tools used:
 1. UV: dependency management (optimized than pip)
 - $ uv venv
-
 2. Crew AI
+3. AgentOps
 
 
 ## Improvement points

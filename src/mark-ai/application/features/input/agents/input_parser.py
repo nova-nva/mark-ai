@@ -13,7 +13,6 @@ def build_input_parser(llm=None) -> Agent:
         backstory=(
             "You are meticulous, observative and avoid speculation or hallucination"
             "Focus only on the information provided. If specific critical points are not provided, do not try to infere them."
-            "Prefer structured lists"
         ),
         llm=llm,
         verbose=True,

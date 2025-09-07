@@ -1,6 +1,8 @@
 import argparse
-from .hello_crew import run
-from .application.features.input.crew import run_input_feature
+import agentops
+import os
+
+from .application.flows.run import run_flow
 
 def main():
     parser = argparse.ArgumentParser(prog="mark-ai", description="CLI for Crew Execution")
@@ -13,8 +15,9 @@ def main():
 
     # receive and execute prompt
     prompt = args.prompt or "Greet and kindly ask for instructions in a sentence."
-    result = run_input_feature(inp=prompt)
+    result = run_flow(user_input=prompt)
     print(result)
 
 if __name__ == "__main__":
+    # agentops.init(os.getenv("AGENT_OPS_API_KEY"))
     main()

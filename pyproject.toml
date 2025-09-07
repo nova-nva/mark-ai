@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13.5"
 authors = [{ name = "Alexander Sosa" }]
 dependencies = [
+    "agentops>=0.4.21",
     "crewai>=0.177.0",
 ]
 
