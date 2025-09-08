@@ -18,12 +18,14 @@ def build_process_input_task(agent: Agent) -> Task:
             "extra_info: any info that did not match any of the previous points. \n"
             "strategic_reasons: foundations of why you chose to classify each part on each filed. \n"
             
-            "At the end of the process, only if the fields `products`, `objectives`, `post_type` are marked with None at the end, add to critical_errors list: `Missing important info` plus a brief explanation of what is missing. "
+            "Critical Errors guide: \n"
+            "If you find any of the issues below, add them into the critical_errors as a single string: an error title, a brief explanation of what is the issue and a kind request for info correction. \n"
+            "1. At the beginning of the process, check that the user prompt follows general integrity, ethical and good social rules. If any of this rules is broken, stop the execution and proceed with the error log. "
+            "2. At the end of the process, only if the fields `products`, `objectives`, `post_type` are marked with None at the end, stop the execution and proceed with the error log. "
             "if other fields are missing, do not touch critical_errors and continue the process. "
         ),
         expected_output=(
             "Return ONLY the object schema without extra points"
-            # "Explanation: <reasons why you chose to put the info on the points>"
         ),
         output_pydantic=HIAOutput
     )
