@@ -14,7 +14,7 @@ def build_output_task(agent: Agent, previous_outputs: List[Task]) -> Task:
             "Generate a Human Readable Final Response markdown content with the points on the following order:. " 
             "1. Standarized Targets: HIAOutput (all content) "
             "2. Standarized Targets strategic reasons: HIAOutput.strategic_reasons | Foundations of the proposed procedures "
-            "3. Post Content: PostContentModel (all content) "
+            "3. Post Content: all info provided in PostContentModel but written as a ready-to-post whole "
             "4. Post Content strategic reasons: PostContentModel.strategic_reasons | Foundations of the proposed procedures "
             "5. Design Concept: DesignConceptModel (all content) "
             "6. Design Concept strategic reasons: HIAOutput.strategic_reasons | Foundations of the proposed procedures "
