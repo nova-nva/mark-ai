@@ -1,5 +1,5 @@
 from crewai import Task, Agent
-import os
+from ...schemas.design_schema import DesignConceptModel
 
 def build_design_task(agent: Agent, structured_input: Task, post_content: Task) -> Task:
     return Task (
@@ -17,4 +17,5 @@ def build_design_task(agent: Agent, structured_input: Task, post_content: Task) 
         expected_output=(
             "Return the Design Concept"
         ),
+        output_pydantic=DesignConceptModel
     )

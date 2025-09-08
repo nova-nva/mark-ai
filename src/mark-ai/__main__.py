@@ -19,5 +19,5 @@ def main():
     print(result)
 
 if __name__ == "__main__":
-    # agentops.init(os.getenv("AGENT_OPS_API_KEY"))
+    agentops.init(os.getenv("AGENT_OPS_API_KEY"))
     main()

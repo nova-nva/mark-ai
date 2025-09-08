@@ -40,7 +40,6 @@ def run_flow(user_input: str):
         agents=[input_parser_agent, research_agent, copywriter_agent, designer_agent],
         tasks=[t1, t2, t3, t4],
         process=Process.sequential,
-        verbose=True
     )
     
     outputs = crew.kickoff(inputs={"prompt": user_input})
