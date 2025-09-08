@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, field_validator
 
 class HIAOutput(BaseModel):
     # prompt info
-    products:   Optional[str] = Field(None, description="what is the product to be promoted")
+    products:   Optional[str] = Field(None, description="what is the product to be promoted. what are the details?")
     objectives: Optional[str] = Field(None, description="why do the user want to promote the product. what's the target.")
     post_type:  Optional[str] = Field(None, description="in what scenario we are. lauch, discount, educational, etc.")
     brand_tone: Optional[str] = Field(None, description="what is the ideal tone of the company or user that want to use for the post")
