@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 *.pyo
 .vscode/
+agentops.log

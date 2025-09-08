@@ -12,7 +12,7 @@ class HIAOutput(BaseModel):
 
     # trazability
     critical_errors: Optional[List[str]] = Field(None, description="critical issues that prevent us from doing the task")
-    # decision_foundations: Optional[List[str]] = Field(None, description="List of why the agents took each decision")
+    strategic_reasons: Optional[List[str]] = Field(None, description="List of why the agents took each decision")
 
     @field_validator("products", "objectives", "post_type", "brand_tone", "platform", "extra_info")
     def empty_to_none(cls, v):
