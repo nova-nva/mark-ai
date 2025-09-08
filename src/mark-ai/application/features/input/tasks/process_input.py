@@ -17,6 +17,7 @@ def build_process_input_task(agent: Agent) -> Task:
             "platform: what is the target social media platform. \n"
             "extra_info: any info that did not match any of the previous points. \n"
             "strategic_reasons: foundations of why you chose to classify each part on each filed. \n"
+            "DO NOT FILL `trend_info` field. "
             
             "Critical Errors guide: \n"
             "If you find any of the issues below, add them into the critical_errors as a single string: an error title, a brief explanation of what is the issue and a kind request for info correction. \n"

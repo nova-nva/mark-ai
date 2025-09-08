@@ -6,6 +6,8 @@ from ..features.input.agents.input_parser import build_input_parser
 from ..features.input.tasks.process_input import build_process_input_task
 from ..features.research.research_agents import build_researcher
 from ..features.research.research_tasks import build_research_task
+from ..features.research.research_agents import build_tendency_researcher
+from ..features.research.research_tasks import build_tendencies_task
 from ..features.copywriting.copy_agents import build_copywriter_agent
 from ..features.copywriting.copy_tasks import build_copy_task
 from ..features.design.design_agents import build_designer_agent
@@ -29,20 +31,22 @@ def run_flow(user_input: str):
     # agents
     input_parser_agent = build_input_parser(llm=_gemini_llm())
     research_agent = build_researcher(llm=_gemini_llm())
+    trends_agent = build_tendency_researcher(llm=_gemini_llm())
     copywriter_agent = build_copywriter_agent(llm=_gemini_llm())
     designer_agent = build_designer_agent(llm=_gemini_llm())
     output_agent = build_output_agent(llm=_gemini_llm())
 
     #tasks
-    t1 = build_process_input_task(input_parser_agent)
-    t2 = build_research_task(research_agent)
-    t3 = build_copy_task(copywriter_agent)
-    t4 = build_design_task(designer_agent, t2, t3)
-    t5 = build_output_task(output_agent, [t2, t3, t4])
+    input_task = build_process_input_task(input_parser_agent)
+    marketing_research_task = build_research_task(research_agent)
+    trends_research_task = build_tendencies_task(trends_agent)
+    content_task = build_copy_task(copywriter_agent)
+    design_task = build_design_task(designer_agent, marketing_research_task, content_task)
+    output_task = build_output_task(output_agent, [marketing_research_task, content_task, design_task])
 
     crew = Crew(
-        agents=[input_parser_agent, research_agent, copywriter_agent, designer_agent, output_agent],
-        tasks=[t1, t2, t3, t4, t5],
+        agents=[input_parser_agent, research_agent, trends_agent, copywriter_agent, designer_agent, output_agent],
+        tasks=[input_task, marketing_research_task, trends_research_task, content_task, design_task, output_task],
         process=Process.sequential,
     )
     

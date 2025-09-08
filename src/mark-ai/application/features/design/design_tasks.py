@@ -16,7 +16,9 @@ def build_design_task(agent: Agent, structured_input: Task, post_content: Task) 
             "You should choose based on the message we want to give and must align the concepts provided. "
 
             "Output field guide: \n" 
-            "design_concept: What piece of art should we use (may be an image, an infographic, a carousel, a video, etc. but only 1) along with a concept of that piece of art in a clear, direct and actionable brief to be implemented by a designer. \n"
+            "visual_format: what visual format should we use? Image or video? Think carefully.. \n"
+            "specific_art: what specific art should we create. if the visual_format is image, should we create an infographic, a carousel, etc? If it is video, should we create a vertical, horizontal, trailer, blog, interview, etc.?. \n"
+            "design_concept: a concept for the visual format that you in a clear, direct and actionable brief to be implemented by a designer. \n"
             "color_palette: what color palette is suggested based on info provided (3-5 HEX colors). \n"
             "typography: proposed typography based on info provided. \n"
             "visual_elements: clear and concise visual elements that should be included on the art. \n"

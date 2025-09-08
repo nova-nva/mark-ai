@@ -3,7 +3,9 @@ from pydantic import BaseModel, Field, field_validator
 
 class DesignConceptModel(BaseModel):
     # design concept
-    design_concept:     Optional[str] = Field(None, description="main design concept of what we are going to create with a clear and actionable descripition to be implemented by a designer")
+    visual_format:      Optional[str] = Field(None, description="")
+    specific_art:       Optional[str] = Field(None, description="")
+    design_concept:     Optional[str] = Field(None, description="design concept of what we are going to create with a clear and actionable descripition to be implemented by a designer")
     color_palette:      Optional[str] = Field(None, description="what colors palette is suggested based on info provided. ")
     typography:         Optional[str] = Field(None, description="proposed typography based on info provided")
     visual_elements:    List[Optional[str]] = Field(None, description="clear and concise visual elements that should be included on the art.")

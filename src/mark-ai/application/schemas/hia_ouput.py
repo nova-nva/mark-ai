@@ -10,6 +10,9 @@ class HIAOutput(BaseModel):
     platform:   Optional[str] = Field(None, description="what is the target social media platform")
     extra_info: Optional[str] = Field(None, description="any info that did not match any of the previous points")
 
+    # trends research info
+    trend_info: Optional[str] = Field(None, description="the latest trends that may align with our post")
+
     # trazability
     critical_errors: Optional[List[str]] = Field(None, description="critical issues that prevent us from doing the task")
     strategic_reasons: Optional[List[str]] = Field(None, description="List of why the agents took each decision")

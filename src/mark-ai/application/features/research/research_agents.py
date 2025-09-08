@@ -12,3 +12,16 @@ def build_researcher(llm=None) -> Agent:
         llm=llm,
         verbose=True,
     )
+
+def build_tendency_researcher(llm=None) -> Agent:
+    return Agent (
+        role="Social Media Tendencies Expert",
+        goal="Research about the high actual tendencies in Social Media networks based on the input provided. ",
+        backstory=(
+            "You are really curious and you are up-to-date with the last tendencies, trends, movements in high-engagement social media (Instragram, Facebook, LinkedIn, TikTok). "
+            "You also avoid speculation or hallucination. "
+            "Base your research on the information provided. "
+        ),
+        llm=llm,
+        verbose=True,
+    )
