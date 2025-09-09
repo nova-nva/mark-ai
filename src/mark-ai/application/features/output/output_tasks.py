@@ -5,7 +5,7 @@ def build_output_task(agent: Agent, previous_outputs: List[Task]) -> Task:
     return Task (
         agent=agent,
         description=(
-            "If there is a `critical_errors` field in the context, do not execute anything and return exactly that content. "
+            "If there is a `critical_errors` field in the context, do not execute anything and return the critical_errors field. "
            
             "Otherwise, create an integrated, human-friendly response based on HIAOutput, PostContentModel, and DesignConceptModel. "
             "Transform and synthesize: do not list raw fields or attribute names; rewrite everything in natural prose. \n"

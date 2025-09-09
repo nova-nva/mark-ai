@@ -5,7 +5,7 @@ def build_copy_task(agent: Agent) -> Task:
     return Task (
         agent=agent,
         description=(
-            "If the model provided by the Human Input Analyst contains `critical_errors` field, do not execute any task. Just return that field content. "
+            "If the model provided by the Human Input Analyst contains `critical_errors` field, do not execute any task. Just return the critical_errors field. "
             "Otherwise use the model to create creative, gramatically correct and coherent content to post. "
             "You must follow logic structures and the input provided. "
             "For each field you fill on the output, add a new item to strategic_reasons list filed providing a brief explanation of why you chose to do that. "

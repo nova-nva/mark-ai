@@ -5,7 +5,7 @@ def build_research_task(agent: Agent) -> Task:
     return Task (
         agent=agent,
         description=(
-            "If the model provided by the Human Input Analyst contains `critical_errors` field, do not execute any task. Just return the original object. "
+            "If the model provided by the Human Input Analyst contains `critical_errors` field, do not execute any task. Just return the critical_errors field. "
             "Otherwise Use the model and check if `brand_tone` and `platform` fields are marked with None. "
             "If these are None, fill them with appropiate responses based on well foundated marketing strategies. "
             "If you get to choose platform field, really consider TikTok since lately is really used to attract people. "
@@ -22,7 +22,7 @@ def build_tendencies_task(agent: Agent) -> Task:
     return Task (
         agent=agent,
         description=(
-            "If the model provided by the previous agent contains `critical_errors` field, do not execute any task. Just return the original object. "
+            "If the model provided by the previous agent contains `critical_errors` field, do not execute any task. Just return the critical_errors field.. "
             
             "Otherwise search about the last tendencies and trends with a week from the current date. "
             "Do not edit any existing info. "

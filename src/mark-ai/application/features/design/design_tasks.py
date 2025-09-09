@@ -5,7 +5,7 @@ def build_design_task(agent: Agent, structured_input: Task, post_content: Task) 
     return Task (
         agent=agent,
         description=(
-            "If the previous models provided any `critical_errors` field, do not execute any task. Just return that field content. "
+            "If the previous models provided any `critical_errors` field, do not execute any task. Just return the critical_errors field. "
 
             "Otherwise, generate 1 CONSISTENT graphic design concept foundated on the info provided. "
             "You have two provided pieces of info that come from previous tasks: \n"
