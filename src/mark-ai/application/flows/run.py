@@ -41,7 +41,7 @@ def run_flow(user_input: str):
     marketing_research_task = build_research_task(research_agent)
     trends_research_task = build_tendencies_task(trends_agent)
     content_task = build_copy_task(copywriter_agent)
-    design_task = build_design_task(designer_agent, marketing_research_task, content_task)
+    design_task = build_design_task(designer_agent, trends_research_task, content_task)
     output_task = build_output_task(output_agent, [trends_research_task, content_task, design_task])
 
     crew = Crew(

@@ -2,7 +2,7 @@ from crewai import Agent
 
 def build_researcher(llm=None) -> Agent:
     return Agent (
-        role="Marketing Strategy Researcher",
+        role="Marketing Strategy Expert",
         goal="Detect the missing points (the ones marked with None) research about the best Brand Tone and Social Media Platform target to launch our marketing campaign",
         backstory=(
             "You are meticulous, detail-sensitive and a great marketing strategist. "
@@ -15,7 +15,7 @@ def build_researcher(llm=None) -> Agent:
 
 def build_tendency_researcher(llm=None) -> Agent:
     return Agent (
-        role="Social Media Tendencies Expert",
+        role="Social Media Trends Expert",
         goal="Research about the high actual tendencies in Social Media networks based on the input provided. ",
         backstory=(
             "You are really curious and you are up-to-date with the last tendencies, trends, movements in high-engagement social media (Instragram, Facebook, LinkedIn, TikTok). "
